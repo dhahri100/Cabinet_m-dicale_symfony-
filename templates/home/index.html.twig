@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Cabinet Médical{% endblock %}
+
+{% block body %}
+<div class="text-center">
+    <h1 class="display-4">Bienvenue au Cabinet Médical</h1>
+    <p class="lead">Prenez rendez-vous avec nos médecins qualifiés ou découvrez nos services médicaux spécialisés.</p>
+    <a href="{{ path('app_login') }}" class="btn btn-primary btn-lg">Prendre Rendez-vous</a>
+</div>
+
+<section class="mt-5">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/general_practice.jpg') }}" alt="Généraliste" class="img-fluid rounded-circle" style="width: 150px;">
+            <h3>Consultation Générale</h3>
+            <p>Un service complet de médecine générale pour répondre à vos besoins quotidiens.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/pediatrics.jpg') }}" alt="Pédiatrie" class="img-fluid rounded-circle" style="width: 150px;">
+            <h3>Pédiatrie</h3>
+            <p>Soins spécialisés pour vos enfants avec des experts attentionnés.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/dentistry.jpg') }}" alt="Dentisterie" class="img-fluid rounded-circle" style="width: 150px;">
+            <h3>Dentisterie</h3>
+            <p>Des soins dentaires pour toute la famille dans un environnement confortable.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

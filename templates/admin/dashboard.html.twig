@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard Admin{% endblock %}
+
+{% block body %}
+<h1 class="text-center mb-4">Tableau de Bord Administratif</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Gérer les Patients</a></li>
+            <li class="list-group-item"><a href="#">Gérer les Médecins</a></li>
+            <li class="list-group-item"><a href="#">Gérer les Réservations</a></li>
+            <li class="list-group-item"><a href="#">Statistiques</a></li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <h3>Statistiques Globales</h3>
+        <p class="text-muted">Visualisez les statistiques clés de votre cabinet.</p>
+        <canvas id="statsChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin'],
+            datasets: [{
+                label: 'Nombre de Rendez-vous',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+{% endblock %}
